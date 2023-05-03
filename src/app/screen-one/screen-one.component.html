@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="d-flex justify-content-center">
+      <h4>Link Bank Account:</h4>
+    </div>
+    <div class=" p-3 d-flex flex-column  align-items-center">
+      <input type="text" (input)="search()" [(ngModel)]="searchTerm" class="border-8" placeholder="Search by bank name">
+      <h5 *ngIf="selectedBanks.length>0">Selected Items:</h5>
+      <div>
+        <ul class="custm-pad ">
+          <li class="mr-2" *ngFor="let selectedBank of selectedBanks">
+            <div class="selectedBtn">
+              <img class="selectedImg" width="20" src="{{selectedBank.imgPath}}" alt="img">
+              <button (click)="onRemoveButtonClick(selectedBank.id, $event)" type="button" class="close selectedClose"
+                aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div style="margin-top: -8px;">
+        <ul class="p-0">
+          <li class="m-2" *ngFor="let bank of filteredBanks">
+            <div class="d-flex justify-content-between">
+              <img class="mr-3" width="20" src="{{bank.imgPath}}" alt="img">
+              <label class="m-0" for="{{bank.id}}">{{ bank.bankName }}</label>
+              <div class="d-flex ">
+                <input type="checkbox" [checked]="" id="{{bank.id}}" name="{{bank.id}}"
+                  (change)="onCheckboxChange($event, bank)">
+  
+              </div>
+            </div>
+  
+          </li>
+        </ul>
+      </div>
+  
+      <button [disabled]="!(selectedBanks.length>0)" class="btn btn-primary" routerLink="/linkbanks"
+        (click)="onProceed()">Proceed</button>
+    </div>
+  </div>
+  

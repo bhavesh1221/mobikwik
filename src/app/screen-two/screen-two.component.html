@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="d-flex  flex-column  align-items-center justify-content-center">
+  
+      <div class="d-flex">
+        <button class="backbtn" routerLink="/selectbanks">
+          <img width="20" src="/assets/banks/back.png" alt="">
+        </button>
+        <span>Link Bank Accounts</span>
+      </div>
+      <ul class="mt-4">
+  
+        <li class="text-end" *ngFor="let selectedBank of selectedBanks">
+          <div class="d-flex justify-content-between">
+            <img class="mr-3" width="20" src="{{selectedBank.imgPath}}" alt="img">
+            <p class="m-0">{{ selectedBank.bankName }}</p>
+            
+          </div>
+            <span class="text-success">Linked Account</span>
+  
+        </li>
+      </ul>
+      <button *ngIf="selectedBanks.length > 0" type="button" class="btn btn-primary" data-toggle="modal"
+        data-target=".bd-example-modal-sm" (click)="onOpenPopUp()">Get OTP</button>
+  
+  
+  
+      <!--  otp modal -->
+      <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content p-4">
+            <h5> OTP sent to xxxxxx378</h5>
+            <input type="text" placeholder="enter otp">
+            <p>Didn't receive OTP?</p>
+            <a class="close" data-dismiss="modal" aria-label="Close" href="javascript:void(0)"
+              class="btn btn-primary">Verify</a>
+          </div>
+        </div>
+      </div>
+      <!--  otp modal ends-->
+    </div>
+  </div>

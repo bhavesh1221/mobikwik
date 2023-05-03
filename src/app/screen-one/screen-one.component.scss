@@ -1,0 +1,28 @@
+ul{
+    list-style: none;
+}
+.selectedBtn{
+    border: 1px solid black;
+    border-radius: 9px;
+    width: 32px;
+    height: 32px;
+    position: relative;
+}
+.custm-pad{
+    padding: 0px 60px;
+    display: flex;
+}
+.selectedImg{
+    position: absolute;
+    top: 4px;
+    left: 5px
+}
+.selectedClose{
+    position: absolute;
+    top: -12px;
+    left: 23px;
+}
+.border-8{
+    border-radius: 8px;
+    border: 1px solid black;
+}
