@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Bank } from './screen-one.model'
 import { DatasharingService } from 'src/shared/datasharing.service';
 
@@ -64,6 +64,8 @@ export class ScreenOneComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  @ViewChild('trv') checkBoxInput: any;
+
   // this function checks whether input data is present in userDetail if it returns true the data is stored in filteredBanks array
   search(): void {
     this.filteredBanks = this.userDetail.filter((bank: Bank) => {
@@ -72,21 +74,22 @@ export class ScreenOneComponent implements OnInit {
   }
 
   //this function pushes the selected bank into selectedBanks array and shows the data in the list
-  onCheckboxChange(event: any, bank: Bank): void {
-    if (event.target.checked) {
+  onCheckboxChange(bank: Bank): void {
+    if (bank.status) {
       this.selectedBanks.push(bank);
     } else {
-        this.selectedBanks = this.selectedBanks.filter((b: Bank) => {
-        return b.id != bank.id
+    this.selectedBanks = this.selectedBanks.filter((b: Bank) => {
+      return b.id !== bank.id;
     });
     }
   }
 
   // this function removes the bank from the list
-  onRemoveButtonClick(selectedBankId: Number, event:Event): void {    
-  this.selectedBanks = this.selectedBanks.filter((b: Bank) => {
-    return b.id !== selectedBankId;
-  });
+  onRemoveButtonClick(bank: Bank): void {   
+    bank.status = false;
+    this.selectedBanks = this.selectedBanks.filter((b: Bank) => {
+      return b.id !== bank.id;
+    });
   }
 
   // on clicking this route is changed and the data is passed to screentwo component, using service

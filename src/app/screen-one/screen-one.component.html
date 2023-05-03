@@ -10,7 +10,7 @@
           <li class="mr-2" *ngFor="let selectedBank of selectedBanks">
             <div class="selectedBtn">
               <img class="selectedImg" width="20" src="{{selectedBank.imgPath}}" alt="img">
-              <button (click)="onRemoveButtonClick(selectedBank.id, $event)" type="button" class="close selectedClose"
+              <button (click)="onRemoveButtonClick(selectedBank)" type="button" class="close selectedClose"
                 aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -25,8 +25,8 @@
               <img class="mr-3" width="20" src="{{bank.imgPath}}" alt="img">
               <label class="m-0" for="{{bank.id}}">{{ bank.bankName }}</label>
               <div class="d-flex ">
-                <input type="checkbox" [checked]="" id="{{bank.id}}" name="{{bank.id}}"
-                  (change)="onCheckboxChange($event, bank)">
+                <input type="checkbox"  [(ngModel)]="bank.status" id="{{bank.id}}" name="{{bank.id}}"
+                (change)="onCheckboxChange(bank)">
   
               </div>
             </div>
