@@ -13,21 +13,21 @@ export class ScreenOneComponent implements OnInit {
       id: 0,
       bankName: 'State Bank of India',
       accountNumber: 123456789,
-      imgPath: '/assets/banks/sbi.png',
+      imgPath: 'assets/banks/sbi.png',
       status: false
     },
     {
       id: 1,
       bankName: 'HDFC',
       accountNumber: 987654321 ,
-      imgPath: '/assets/banks/bank1.jpg',
+      imgPath: 'assets/banks/bank1.jpg',
       status: false
     },
     {
       id: 2,
       bankName: 'ICICI',
       accountNumber: 435353 ,
-      imgPath: '/assets/banks/icici.png',
+      imgPath: 'assets/banks/icici.png',
       status: false
     },
 
@@ -35,7 +35,7 @@ export class ScreenOneComponent implements OnInit {
       id: 3,
       bankName: 'Central Bank of India',
       accountNumber: 5325245 ,
-      imgPath: '/assets/banks/cbi.png',
+      imgPath: 'assets/banks/cbi.png',
       status: false
     },
     
@@ -43,7 +43,7 @@ export class ScreenOneComponent implements OnInit {
       id: 4,
       bankName: 'Citigroup',
       accountNumber: 453543543 ,
-      imgPath: '/assets/banks/citi.png',
+      imgPath: 'assets/banks/citi.png',
       status: false
     },
     
@@ -51,7 +51,7 @@ export class ScreenOneComponent implements OnInit {
       id: 5,
       bankName: 'Kotak Mahindra bank',
       accountNumber: 45345668 ,
-      imgPath: '/assets/banks/kot.jpg',
+      imgPath: 'assets/banks/kot.jpg',
       status: false
     },
   ] 
