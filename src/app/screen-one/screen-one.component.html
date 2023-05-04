@@ -1,11 +1,16 @@
-<div class="container">
-    <div class="d-flex justify-content-center">
-      <h4>Link Bank Account:</h4>
+<div class="container mt-4">
+    <div class="d-flex justify-content-center align-items-center">
+      <img class="backbtn" src="assets/banks/back.png" alt="">
+      <h6>Select one or more Banks</h6>
     </div>
     <div class=" p-3 d-flex flex-column  align-items-center">
-      <input type="text" (input)="search()" [(ngModel)]="searchTerm" class="border-8" placeholder="Search by bank name">
-      <h5 *ngIf="selectedBanks.length>0">Selected Items:</h5>
-      <div>
+     <div class="noitem">
+      <input  type="text" (input)="search()" [(ngModel)]="searchTerm" class="border-8 cstm-inp form-control" placeholder="Search by bank name">
+      
+      <!-- <p *ngIf="selectedBanks.length>0">Selected Items:</p> -->
+      <p class="mt-2 nobank" *ngIf="selectedBanks.length == 0">No Bank Selected:</p>
+     </div>
+      <div *ngIf="selectedBanks.length > 0">
         <ul class="custm-pad ">
           <li class="mr-2" *ngFor="let selectedBank of selectedBanks">
             <div class="selectedBtn">
@@ -18,19 +23,22 @@
           </li>
         </ul>
       </div>
+    
       <div style="margin-top: -8px;">
         <ul class="p-0">
-          <li class="m-2" *ngFor="let bank of filteredBanks">
+          <li class=" listdata" *ngFor="let bank of filteredBanks">
             <div class="d-flex justify-content-between">
-              <img class="mr-3" width="20" src="{{bank.imgPath}}" alt="img">
+             <div class="d-flex">
+              <img class="mr-3" width="20"  src="{{bank.imgPath}}" alt="img">
               <label class="m-0" for="{{bank.id}}">{{ bank.bankName }}</label>
-              <div class="d-flex ">
-                <input type="checkbox"  [(ngModel)]="bank.status" id="{{bank.id}}" name="{{bank.id}}"
+             </div>
+              <div class="d-flex ml-2 ">
+                <input class="" type="checkbox"  [(ngModel)]="bank.status" id="{{bank.id}}" name="{{bank.id}}"
                 (change)="onCheckboxChange(bank)">
   
               </div>
             </div>
-  
+            <hr>
           </li>
         </ul>
       </div>

@@ -4,10 +4,26 @@ ul{
 .backbtn{
     background: none;
     border: none;
+    margin-right: 17px;
 }
 .text-end{
     text-align: end;
 }
+.lnk{
+    margin-right: 12px;
+}
 li{
     margin-top: 10px;
+}
+.link{
+    text-align: end;
+    font-size: 14px;
+}
+hr{
+    margin-top: 20px;
+    margin-bottom: 4px;
+}
+.closebtn{
+    border: none;
+    background: #f7f7f7;
 }

@@ -20,4 +20,9 @@ export class ScreenTwoComponent implements OnInit {
   onOpenPopUp(){
     console.log("poppoup");
   }
+  onCheckboxChange(bank: Bank): void {
+    this.selectedBanks = this.selectedBanks.filter((b: Bank) => {
+      return b.id !== bank.id;
+    });
+  }
 }

@@ -4,18 +4,31 @@ ul{
 .selectedBtn{
     border: 1px solid black;
     border-radius: 9px;
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     position: relative;
 }
 .custm-pad{
     padding: 0px 60px;
     display: flex;
+    margin-bottom: 15px;
+    margin-top: 15px !important;
+}
+.nobank{
+    margin-bottom: 25px;
+    margin-top: 15px !important;
+}
+
+
+.noitem{
+    // padding: 0px 37px;
+    // border: 1px solid;
+    text-align: center;
 }
 .selectedImg{
     position: absolute;
-    top: 4px;
-    left: 5px
+    top: 5px;
+    left: 6px
 }
 .selectedClose{
     position: absolute;
@@ -24,5 +37,22 @@ ul{
 }
 .border-8{
     border-radius: 8px;
-    border: 1px solid black;
+    // border: 1px solid black;
+}
+.backbtn{
+    width: 22px;
+    height: 22px;
+    margin-right: 18px;
+}
+.listdata{
+    // border: 1px solid black;
+    border-radius: 8px;
+    padding: 7px 24px;
+}
+.cstm-inp{
+    // width: 258px;
+}
+hr{
+    margin-top: 20px;
+    margin-bottom: 4px;
 }

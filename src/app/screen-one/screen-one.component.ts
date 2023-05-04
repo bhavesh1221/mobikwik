@@ -31,16 +31,10 @@ export class ScreenOneComponent implements OnInit {
       status: false
     },
 
-    {
-      id: 3,
-      bankName: 'Central Bank of India',
-      accountNumber: 5325245 ,
-      imgPath: 'assets/banks/cbi.png',
-      status: false
-    },
+   
     
     {
-      id: 4,
+      id: 3,
       bankName: 'Citigroup',
       accountNumber: 453543543 ,
       imgPath: 'assets/banks/citi.png',
@@ -48,7 +42,7 @@ export class ScreenOneComponent implements OnInit {
     },
     
     {
-      id: 5,
+      id: 4,
       bankName: 'Kotak Mahindra bank',
       accountNumber: 45345668 ,
       imgPath: 'assets/banks/kot.jpg',

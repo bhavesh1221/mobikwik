@@ -1,24 +1,33 @@
-<div class="container">
+<div class="container mt-4">
     <div class="d-flex  flex-column  align-items-center justify-content-center">
   
-      <div class="d-flex">
+      <div class="d-flex mb-3">
         <button class="backbtn" routerLink="/selectbanks">
           <img width="20" src="assets/banks/back.png" alt="">
         </button>
-        <span>Link Bank Accounts</span>
+        <span class="lnk">Link Bank Accounts</span>
       </div>
-      <ul class="mt-4">
-  
-        <li class="text-end" *ngFor="let selectedBank of selectedBanks">
+      <ul class="p-0">
+        <li class=" listdata" *ngFor="let selectedBank of selectedBanks">
           <div class="d-flex justify-content-between">
-            <img class="mr-3" width="20" src="{{selectedBank.imgPath}}" alt="img">
-            <p class="m-0">{{ selectedBank.bankName }}</p>
+           <div class="d-flex">
+            <img class="mr-3" width="20"  src="{{selectedBank.imgPath}}" alt="img">
+            <label class="m-0" for="{{selectedBank.id}}">{{ selectedBank.bankName }}</label>
             
           </div>
-            <span class="text-success">Linked Account</span>
-  
+          <div class="d-flex ml-2 ">
+            <!-- <input type="checkbox"  [(ngModel)]="selectedBank.status" id="{{selectedBank.id}}" name="{{selectedBank.id}}"
+            (change)="onCheckboxChange(selectedBank)" 
+           > -->
+           <button (click)="onCheckboxChange(selectedBank)" class="closebtn">x</button>
+            
+          </div>
+        </div>
+        <p class="text-success m-0 link">Linked Account</p>
+          <hr>
         </li>
       </ul>
+      
       <button *ngIf="selectedBanks.length > 0" type="button" class="btn btn-primary" data-toggle="modal"
         data-target=".bd-example-modal-sm" (click)="onOpenPopUp()">Get OTP</button>
   
